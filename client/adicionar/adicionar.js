@@ -9,7 +9,9 @@ Template.adicionar.events({
 		var nome = input.val();
 		
 		if(nome != '') {
-			Tarefas.insert({nome: nome, data: new Date()});
+			//Tarefas.insert({nome: nome, data: new Date()});
+			Meteor.call("adicionar", {nome: nome});
+
 			input.val('');
 		}
 

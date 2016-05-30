@@ -10,7 +10,7 @@ Template.adicionar.events({
 		
 		if(nome != '') {
 			//Tarefas.insert({nome: nome, data: new Date()});
-			Meteor.call("adicionar", {nome: nome});
+			Meteor.call("adicionar", {nome: nome, usuario: this.userId});
 
 			input.val('');
 		}

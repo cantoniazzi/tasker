@@ -13,7 +13,7 @@
 
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					
+				{{> loginButtons}}
 				</ul>
 			</div>
 			
@@ -21,8 +21,12 @@
 	</header>
 
 	<main class="container">
-		{{> adicionar}}
-		{{> lista}}	
+		{{#if currentUser}}
+			{{> adicionar}}
+			{{> lista}}	
+		{{else}}
+			Você precisa estar autenticado para criar tarefas
+		{{/if}}
 	</main>
 	
 </body>

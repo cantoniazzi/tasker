@@ -1,6 +1,6 @@
 Template.adicionar.events({
 
-	"submit form": function(e, template){
+	'submit #form-adicionar': function(e, template){
 		
 		//to cancel default form submit
 		e.preventDefault(); 
@@ -8,8 +8,10 @@ Template.adicionar.events({
 		var input = $('#tarefa');		
 		var nome = input.val();
 		
-		Tarefas.insert({nome: nome, data: new Date()});
-		input.val('');
-		
+		if(nome != '') {
+			Tarefas.insert({nome: nome, data: new Date()});
+			input.val('');
+		}
+
 	}
 });
